@@ -1,0 +1,17 @@
+<polymer-element name="standup-reminder-card" extends="nebrios-form" target="project_management.update_standup">
+    <template>
+        <template if="{{kvps.reminder.value}}">
+            <h2>Stand Up Reminder</h2>
+            The stand up for {{kvps.standup.value}} is starting in 30 minutes.
+        </template>
+        <template if="!{{kvps.reminder.value}}">
+            <h2>Stand Up Form - {{kvps.standup.value}}</h2>
+        </template>
+        <nebrios-string id="past_day" label="What did you do in the past day/week?" required></nebrios-string>
+        <nebrios-string id="today" label="What will you do today?" required></nebrios-string>
+        <nebrios-string id="roadblocks" label="What roadblocks have you encountered?"></nebrios-string>
+    </template>
+    <script>
+        Polymer("standup-reminder-card", {});
+    </script>
+</polymer-element>

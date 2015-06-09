@@ -1,0 +1,15 @@
+<polymer-element name="standup-alert-card" extends="nebrios-element">
+    <template>
+        <h2>Stand Ups Today</h2>
+        <template repeat="{{standup in kvps.standups.value}}">
+            {{standup.value.name.value}} - {{standup.value.occuring_time.value}}<br>
+        </template>
+    </template>
+    <script>
+        Polymer("standup-alert-card", {
+            domReady: function() {
+                console.log(this.kvps);
+            }    
+        });
+    </script>
+</polymer-element>

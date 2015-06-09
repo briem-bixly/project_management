@@ -1,0 +1,21 @@
+<polymer-element name="project-info-card" extends="nebrios-form" target="project_management.update_project">
+    <template>
+        <template if="{{kvps.editing.value == true}}">
+            <h2>Update Project</h2>
+        </template>
+        <template if="{{kvps.editing.value == false}}">
+            <h2>Create Project</h2>
+        </template>
+        <nebrios-string id="name" label="Project Name"></nebrios-string>
+        <nebrios-string id="description" label="Description"></nebrios-string>
+        <nebrios-select id="project_pm" label="Project Manager" options="pms"></nebrios-select>
+        <nebrios-select id="developers" label="Developers" multi="true" options="devs"></nebrios-select>
+        <nebrios-string id="client_name" label="Client Name"></nebrios-string>
+        <nebrios-select id="standup_days" label="Stand Up Days" multi="true" options="valid_days"></nebrios-select>
+        <nebrios-string id="standup_time" label="Stand Up Time i.e. 12:00 PM"></nebrios-string>
+        <nebrios-boolean id="is_active" label="Is Active" value="true"></nebrios-boolean>
+    </template>
+    <script>
+        Polymer("project-info-card", {});
+    </script>
+</polymer-element>
